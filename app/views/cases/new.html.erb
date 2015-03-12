@@ -1,0 +1,8 @@
+<h1> What case are you an expert at? </h1>
+<%= form_for @case do |form| %>
+<div class="form-group">
+    <%= form.label :"Type in Your Case Name" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+    <%= form.button "Submit your case", class: "btn btn-success" %>
+  <% end %>

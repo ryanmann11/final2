@@ -1,0 +1,46 @@
+<p>
+  <%= image_tag "#{@giver.id}.jpg", style: 'width:300px' %>
+</p>
+
+<h1><%= @giver.name %></h1>
+
+<h3>Is the best at giving this case:</h3>
+
+<ul>
+      <li><%= link_to @case.name, case_path(@case) %></li>
+  </ul>
+<br>
+<h3> Want to prep with me? </h3>
+<form class="form-inline">
+  <div class="form-group">
+    <label for="exampleInputName2">Name</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail2">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+  </div>
+
+   <div class="container">
+<div class="col-sm-6">
+<div class="form-group">
+<div class='input-group date' id='datetimepicker12'>
+ <label for="datetimepicker12">Pick a date and a time</label
+<input type='text' class="form-control" />
+<span class="input-group-addon"><span class="glyphicon glyphicon-calendar">
+</span>
+</span>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(function () {
+$('#datetimepicker12').datetimepicker({
+inline: true,
+sideBySide: true
+});
+});
+</script>
+</div>
+ <button type="submit" class="btn btn-default">Send invitation</button>
+</form>
