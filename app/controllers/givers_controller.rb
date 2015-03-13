@@ -7,7 +7,7 @@ class GiversController < ApplicationController
 
   def show
     @giver = Giver.find_by(id: params["id"])
-    @case = Case.all
+    @case = Case.find_by(giver_id: @giver.id) 
   end
 
   def new

@@ -5,15 +5,12 @@ Case:
   difficulty: string
   topic: string
   firm_id: integer
+  giver_id: integer
 
 Giver:
   name: string
-  case_id: integer
-
-Sponsor:
-  case_id: integer
-  giver_id: integer
-
+  email: string
+  
 Firm:
   name: string
 

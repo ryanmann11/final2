@@ -7,6 +7,7 @@
     <p><%= image_tag @case.image, class: "poster" %></p>
     <p><strong>Topic:</strong> <%= @case.topic %></p>
     <p><strong>Difficulty:</strong> <%=@case.difficulty %></p>
+    <p><strong>Source:</strong> <%=@case.firm.name %></p>
      </div>
   <div class="col-md-4 summary">
     <h2>Summary</h2>
@@ -15,7 +16,7 @@
     </p>
   </div>
   <div class="col-md-3 givers">
-    <h2>Expert giver of this case:</h2>
+    <h2>Case expert:</h2>
     <ul class="list-unstyled">
      <li><%= link_to @giver.name, giver_path(@giver) %></li>
       </ul>

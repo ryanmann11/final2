@@ -20,20 +20,20 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "difficulty"
     t.string  "topic"
     t.integer "firm_id"
+    t.integer "giver_id"
   end
 
   add_index "cases", ["firm_id"], name: "index_cases_on_firm_id"
+  add_index "cases", ["giver_id"], name: "index_cases_on_giver_id"
 
   create_table "firms", force: true do |t|
     t.string "name"
   end
 
   create_table "givers", force: true do |t|
-    t.string  "name"
-    t.integer "case_id"
+    t.string "name"
+    t.string "email"
   end
-
-  add_index "givers", ["case_id"], name: "index_givers_on_case_id"
 
   create_table "reviews", force: true do |t|
     t.integer "user_id"
@@ -44,14 +44,6 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "reviews", ["case_id"], name: "index_reviews_on_case_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
-
-  create_table "sponsors", force: true do |t|
-    t.integer "case_id"
-    t.integer "giver_id"
-  end
-
-  add_index "sponsors", ["case_id"], name: "index_sponsors_on_case_id"
-  add_index "sponsors", ["giver_id"], name: "index_sponsors_on_giver_id"
 
   create_table "users", force: true do |t|
     t.string "email"

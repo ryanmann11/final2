@@ -7,7 +7,7 @@ class CasesController < ApplicationController
 
   def show
     @case = Case.find_by(id: params["id"])
-    @giver = Giver.all
+    @giver = @case.giver
   end
 
   def edit
@@ -19,10 +19,15 @@ class CasesController < ApplicationController
   end
 
   def create
-    case_params = params.require(:case).permit(:name)
-    @case = Case.create(case_params)
-    @giver = @case.giver
-    redirect_to givers_path
+    case_params = params.require(:case).permit(:name, :firm_id, :summary, :difficulty, :topic)
+    @case = Case.new(case_params)
+    @case.giver = Giver.create(:name=>current_user.name)
+    @case.image = "Stock.jpg"
+    if @case.save
+    redirect_to cases_path
+  else 
+    render test: "Ugh, try again!"
+end
 end
 
   def update
@@ -41,5 +46,5 @@ end
     @case.destroy
     redirect_to cases_path
   end
-
 end
+
