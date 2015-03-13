@@ -26,6 +26,6 @@ oil = Case.create(firm: mckinsey, giver: jelinek, name: "Big Oil", image: "Oil.j
 jt = Case.create(firm: bain, giver: mann, name: "JT's Energy Drinks", image: "Energy.jpg", summary: "Provide our client with suggestions for how to optimize its marketing mix of products.", difficulty: "Hard", topic: "Marketing")
 
 # Create users
-User.create(name: "Brian", email: "b-eng@kellogg.northwestern.edu", password: "secret")
+User.create(name: "Brian Eng", email: "b-eng@kellogg.northwestern.edu", password: "secret")
 
 puts "There are now #{Firm.count} firms, #{Case.count} cases, #{Giver.count} case givers, and #{User.count} users in the database."

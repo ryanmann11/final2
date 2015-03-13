@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+skip_before_action :require_user, only: [:new, :create]
+
 
   def index
     @users = User.all
@@ -16,6 +18,7 @@ class UsersController < ApplicationController
     user_params = params.require(:user).permit!
     @user = User.create(user_params)
     if @user.valid?
+      @user.save
       redirect_to users_path, notice: "Welcome!"
     else
       render "new"

@@ -16,7 +16,7 @@ class GiversController < ApplicationController
   end
 
   def create
-    giver_params = params.require(:giver).permit(:name)
+    giver_params = params.require(:giver).permit(:name, :email)
     @giver = Giver.create(giver_params)
     @firm = Firm.all
   
