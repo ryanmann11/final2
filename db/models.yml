@@ -10,7 +10,7 @@ Case:
 Giver:
   name: string
   email: string
-  
+
 Firm:
   name: string
 

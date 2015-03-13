@@ -4,4 +4,8 @@
   belongs_to :giver
 
   validates :name, presence: true
+  validates :firm, presence: true
+  validates :summary, presence: true
+  validates :difficulty, presence: true
+  validates :topic, presence: true
 end

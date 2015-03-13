@@ -26,7 +26,7 @@ class CasesController < ApplicationController
     if @case.save
     redirect_to cases_path
   else 
-    render test: "Ugh, try again!"
+    render "new"
 end
 end
 

@@ -1,3 +1,14 @@
+<% if @case.errors.any? %>
+  <div class="alert alert-warning">
+    <h2>Some errors kept this case from being saved:</h2>
+    <ul>
+      <% @case.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1> What case are you an expert at? </h1>
 <%= form_for @case do |form| %>
 <div class="form-group">

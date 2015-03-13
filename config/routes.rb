@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :preps
+
   resources :cases do
     resources :reviews
   end

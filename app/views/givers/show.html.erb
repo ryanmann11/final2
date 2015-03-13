@@ -13,4 +13,4 @@
 <div class="well">
       <li><%= link_to @case.name, case_path(@case) %></li>
      </div>
- <button type="submit" class="btn btn-success">Prep with me</button>
+<%= link_to "Prep with me", prep_path, class: "btn btn-success" %>
